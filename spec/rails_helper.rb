@@ -52,7 +52,12 @@ RSpec.configure do |config|
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
-  --format documentation
+
+  RSpec.configure do |config|
+  #下記の記述を追加
+  config.include FactoryGirl::Syntax::Methods
+
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
 end
